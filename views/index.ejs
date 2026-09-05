@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Notes</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <h1>My Book Notes</h1>
+
+  <!-- secondary -->
+  <form action="/add" method="post" class="add-book-form">
+    <input type="text" name="title" placeholder="Book Title" required>
+    <input type="text" name="isbn" placeholder="ISBN" required>
+    <textarea name="notes" placeholder="Write your notes here..."></textarea>
+    <input type="number" name="rating" min="1" max="10" placeholder="Rating (1-10)">
+    <input type="date" name="date">
+
+    <button type="submit"> Add Notes </button>
+  </form>
+
+  <!-- secondary -->
+  <div>
+    <span>Sort by: </span>
+    <a href="/?sort=rating">Rating</a> |
+    <a href="/?sort=recency">Recency</a>
+  </div>
+
+  <% books.forEach((book) => {%>
+
+  <!-- secondary -->
+  <div class="book-card">
+    <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" alt="Book's Cover">
+
+    <!-- tertiary -->
+    <div class="book-details">
+      <!-- quaternary -->
+      <div class="book-card-header">
+        <h2><%= book.title %></h2>
+        <form action="/delete" method="post">
+          <input type="hidden" name="id" value="<%= book.id %>">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+<!-- quaternary -->
+      <p><%= book.notes%></p>
+      <p>Rating : <%= book.rating %>/10</p>
+      <p>Read on:<%= book.date_read %></p>
+<!-- quaternary -->
+      <form action="/update" method="post" class="edit-form">
+        <input type="hidden" name="id" value="<%= book.id %>">
+        <input type="text" name="isbn" placeholder="isbn" value="<%= book.isbn %>">
+        <textarea name="notes"><%= book.notes %></textarea>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <%}); %>
+
+</body>
+
+</html>

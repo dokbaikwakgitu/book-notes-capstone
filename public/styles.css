@@ -1,0 +1,93 @@
+
+.book-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.book-card img {
+  width: 140px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.book-details{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 10px;
+}
+
+.book-details textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  margin-top: 5px;
+}
+
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.book-details input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.add-book-form input,
+.add-book-form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.add-book-form button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.book-card-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-form{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
